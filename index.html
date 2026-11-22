@@ -180,7 +180,7 @@ function renderSetup(){
  $$('#dots i').forEach((d,k)=>d.classList.toggle('on',k<=setupStep));
  const b=$('#setupBody');
  if(setupStep===0)b.innerHTML=`<div class="card"><div class="s13 g">Tap 1 of 3</div><div class="b" style="margin:2px 0 10px">Is this your card?</div>
- <div class="chips"><button class="chip on">HDFC Millennia</button><button class="chip">HDFC Regalia Gold</button><button class="chip">MoneyBack+</button><button class="chip">Other</button></div>
+ <div class="chips"><button class="chip on">HDFC · ₹499 fee plan</button><button class="chip">HDFC · ₹1,000 fee plan</button><button class="chip">HDFC · ₹2,500 fee plan</button><button class="chip">Other</button></div>
  <p class="s13 g" style="margin:10px 0 0">Pre-filled from your bill. Change it if it’s wrong.</p></div><button class="btn hot" data-setup>Yes, that’s my card</button>`;
  if(setupStep===1)b.innerHTML=`<div class="card"><div class="s13 g">Tap 2 of 3</div><div class="b" style="margin:2px 0 10px">When did your card-year start?</div>
  <div class="chips">${months.map(m=>`<button class="chip ${m==='Mar'?'on hot':''}" data-setup>${m}</button>`).join('')}</div>
@@ -195,7 +195,7 @@ function renderCards(){
  const n=1+tracked.sbi+tracked.axis;
  $('#cardsBody').innerHTML=c('hdfc','HDFC','#22304F','HDFC ••4821','Fee waiver 81% · ₹38,000 to go','<span class="tag e">Estimated</span>',true)
  +c('sbi','SBI','#0B6FB8','Paytm SBI ••1190',tracked.sbi?'Milestone 80% · ₹12,000 to a ₹1,000 voucher':'Due ₹6,450 · 18 Dec','<span class="tag x">Exact</span>',tracked.sbi)
- +c('axis','AXIS','#8C1D40','Axis ••7732',tracked.axis?'1,240 points expire in 21 days':'Due ₹3,120 · 20 Dec','<span class="tag e">Estimated</span>',tracked.axis)
+ +c('axis','AXIS','#8C1D40','Axis ••7732',tracked.axis?'Fee waiver 36% · ₹1.26L of ₹3.5L':'Due ₹3,120 · 20 Dec','<span class="tag e">Estimated</span>',tracked.axis)
  +`<div class="s13 g" style="text-align:center">${n} of 3 cards tracked${tracked.sbi?' · Paytm SBI figures come from the issuer':''}</div>`
  +(n>1?`<button class="btn hot" data-go="lock">Fast-forward 3 weeks →</button>`:'');
 }
